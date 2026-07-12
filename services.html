@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Our Services | Galerias Mobile Pet Grooming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="./Icon_1.png">
+    
+    <style>
+        /* --- TIPOGRAFÍAS DEL INDEX --- */
+        @font-face {
+            font-family: 'Fraiche';
+            src: url('./fonts/fraiche.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'BoldenVan';
+            src: url('./fonts/BoldenVan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #344597; /* Ajustado al azul original del Index */
+            --color-secondary: #00C0FA;
+            --color-light-blue: #7DB2FE;
+            --color-teal: #23DCE1;
+            --color-accent: #FF9800;
+            --color-white: #FFFFFF;
+            --color-gray-light: #F7F9FC;
+            --shadow-sm: 0 8px 24px rgba(52, 69, 151, 0.04);
+            --shadow-md: 0 16px 40px rgba(52, 69, 151, 0.08);
+            --border-radius: 24px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-white);
+            color: #1e2a47;
+            line-height: 1.5;
+        }
+
+        /* Aplicación de las fuentes del Index */
+        h1 {
+            font-family: 'Fraiche', sans-serif;
+            font-weight: normal;
+        }
+
+        h2, h3, h4 {
+            font-family: 'BoldenVan', sans-serif;
+            font-weight: normal;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-family: 'BoldenVan', sans-serif;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e68900;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,152,0,0.4);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo { display: flex; align-items: center; }
+        .logo-img { height: 70px; width: auto; max-width: 200px; object-fit: contain; }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e66;
+            font-family: 'BoldenVan', sans-serif;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--color-accent); }
+        .menu-icon { display: none; font-size: 28px; cursor: pointer; color: var(--color-primary); }
+
+        .nav-book-btn {
+            background-color: var(--color-accent);
+            color: #ffffff !important;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-family: 'BoldenVan', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 15px;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-book-btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        /* ── PAGE HEADER HERO – mismo estilo que index ── */
+        .page-header {
+            background-image:
+                linear-gradient(rgba(10, 20, 60, 0.60), rgba(10, 20, 60, 0.52)),
+                url("./background-hero.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 100px 0 160px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Orbes de luz difusa */
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -60px;
+            width: 460px; height: 460px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,192,250,0.20) 0%, transparent 68%);
+            pointer-events: none;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 50px; left: -40px;
+            width: 380px; height: 380px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,152,0,0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        /* Contenido centrado */
+        .page-header-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        /* Pill badge */
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.35);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #ffffff;
+            font-family: 'BoldenVan', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 22px;
+            border-radius: 40px;
+        }
+        .hero-pill i { color: var(--color-accent); }
+
+        .page-header h1 {
+            font-size: 4rem;
+            font-family: 'Fraiche', sans-serif;
+            font-weight: normal;
+            color: #ffffff;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.35);
+            margin-bottom: 0;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        /* Línea decorativa degradada bajo el título */
+        .hero-title-underline {
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+
+        .page-header p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.88);
+            max-width: 520px;
+            line-height: 1.6;
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Mini tarjetas de servicios en el hero */
+        .hero-service-chips {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 6px;
+        }
+
+        .hero-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.22);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #ffffff;
+            font-family: 'BoldenVan', sans-serif;
+            font-size: 0.83rem;
+            padding: 10px 20px;
+            border-radius: 40px;
+            transition: background 0.25s, border-color 0.25s, transform 0.25s;
+        }
+
+        .hero-chip i { color: var(--color-accent); font-size: 0.9rem; }
+
+        .hero-chip:hover {
+            background: rgba(255,152,0,0.18);
+            border-color: rgba(255,152,0,0.55);
+            transform: translateY(-3px);
+        }
+
+        /* Paw prints flotantes */
+        .hero-paw {
+            position: absolute;
+            color: rgba(255,255,255,0.07);
+            pointer-events: none;
+            animation: paw-float 6s ease-in-out infinite;
+        }
+
+        .hero-paw:nth-child(1) { top: 10%; left: 5%;  font-size: 2.8rem; animation-delay: 0s; }
+        .hero-paw:nth-child(2) { top: 58%; left: 3%;  font-size: 4rem;   animation-delay: 1.4s; }
+        .hero-paw:nth-child(3) { top: 15%; right: 6%; font-size: 3.2rem; animation-delay: 0.7s; }
+        .hero-paw:nth-child(4) { top: 60%; right: 4%; font-size: 2.2rem; animation-delay: 2.1s; }
+        .hero-paw:nth-child(5) { top: 35%; left: 11%; font-size: 1.8rem; animation-delay: 1.9s; }
+
+        @keyframes paw-float {
+            0%, 100% { transform: translateY(0) rotate(-8deg);   opacity: .07; }
+            50%       { transform: translateY(-14px) rotate(6deg); opacity: .14; }
+        }
+
+        /* Curva inferior */
+        .hero-curve-divider {
+            position: absolute;
+            bottom: -1px; left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+            z-index: 2;
+        }
+        .hero-curve-divider svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 70px;
+        }
+        .hero-curve-divider .shape-fill { fill: #FFFFFF; }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 80px 0 130px; }
+            .page-header h1 { font-size: 2.6rem; }
+            .hero-service-chips { gap: 10px; }
+            .hero-chip { font-size: 0.78rem; padding: 8px 14px; }
+        }
+
+        /* --- THE PROCESS --- */
+        .process-section {
+            padding: 80px 0;
+            background-color: var(--color-white);
+            text-align: center;
+        }
+
+        .process-section h2 {
+            font-size: 2.8rem;
+            color: var(--color-primary);
+            margin-bottom: 60px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .process-step {
+            padding: 35px 25px;
+            background: var(--color-gray-light);
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            background: var(--color-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'BoldenVan', sans-serif;
+            font-size: 1.4rem;
+            margin: -65px auto 20px;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .process-step h3 {
+            color: var(--color-primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            color: #5a6e8a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- MAIN SERVICES --- */
+        .main-services-section {
+            padding: 80px 0;
+            background-color: var(--color-gray-light);
+        }
+
+        .main-services-section h2 {
+            font-size: 2.8rem;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: 0.3s;
+            border-top: 6px solid var(--color-secondary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-img-container {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+
+        .service-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-card-img {
+            transform: scale(1.06);
+        }
+
+        .service-content {
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-content h3 {
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        .service-desc {
+            color: #5a6e8a;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .service-includes {
+            list-style: none;
+            margin-bottom: 35px;
+            flex-grow: 1;
+        }
+
+        .service-includes li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #e2e8f0;
+            color: #4a5568;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-includes li:last-child { border-bottom: none; }
+        .service-includes li i { color: var(--color-teal); font-size: 0.95rem; }
+
+        .book-service-btn {
+            background: var(--color-primary);
+            color: white;
+            padding: 14px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'BoldenVan', sans-serif;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        .book-service-btn:hover {
+            background: var(--color-secondary);
+        }
+
+        /* --- ADD-ONS SECTION --- */
+        .addons-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .addons-section h2 {
+            color: var(--color-primary);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .addons-section p.subtitle {
+            color: #5a6e8a;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .addon-card {
+            background: var(--color-gray-light);
+            padding: 40px 25px;
+            border-radius: 24px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .addon-card:hover {
+            background: white;
+            box-shadow: var(--shadow-sm);
+            border-color: var(--color-secondary);
+            transform: translateY(-5px);
+        }
+
+        .addon-img-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 4px solid white;
+        }
+
+        .addon-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .addon-card h4 {
+            color: var(--color-primary);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .addon-card p {
+            color: #5a6e8a;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* --- PREMIUM FOOTER --- */
+        .premium-footer {
+            background-color: #0A1428;
+            color: #a0aec0;
+            padding: 80px 0 0 0;
+            margin-top: 80px;
+        }
+
+        .footer-top-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr; 
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .footer-logo {
+            height: 80px;
+            width: auto;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            max-width: 90%;
+        }
+
+        .footer-socials { display: flex; gap: 15px; }
+        .footer-socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            background: var(--color-accent);
+            transform: translateY(-3px);
+        }
+
+        .premium-footer h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-family: 'BoldenVan', sans-serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .premium-footer h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        .premium-footer ul { list-style: none; }
+        .premium-footer ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .premium-footer ul li i { color: var(--color-secondary); }
+        .premium-footer a { color: #a0aec0; text-decoration: none; transition: color 0.3s ease; }
+        .premium-footer a:hover { color: var(--color-accent); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 25px 0;
+        }
+
+        .bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+
+        .legal-links { display: flex; gap: 20px; }
+
+        /* Responsivo */
+        @media (max-width: 992px) {
+            .footer-top-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 850px) {
+            .navbar {
+                flex-wrap: wrap;
+                position: relative;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                padding: 12px 0 20px;
+                gap: 4px;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
+                background: rgba(255, 255, 255, 0.97);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 0 8px 24px rgba(26, 40, 89, 0.10);
+                border-top: 1px solid rgba(26, 40, 89, 0.08);
+                border-radius: 0 0 20px 20px;
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 24px;
+                font-size: 1rem;
+                border-radius: 12px;
+                margin: 0 16px;
+            }
+
+            .nav-links a:hover {
+                background: rgba(255, 152, 0, 0.08);
+            }
+
+            .nav-book-btn,
+            .nav-links a.nav-book-btn {
+                margin: 8px 16px 0;
+                text-align: center;
+                display: block;
+                padding: 13px 0;
+                border-radius: 30px;
+                width: calc(100% - 32px);
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-top-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand .footer-logo { margin: 0 auto 25px; }
+            .footer-brand p { margin: 0 auto 25px; }
+            .footer-socials { justify-content: center; }
+            .premium-footer h3::after { left: 50%; transform: translateX(-50%); }
+            .premium-footer ul li { justify-content: center; }
+            .bottom-content { flex-direction: column; text-align: center; }
+            .page-header h1 { font-size: 2.8rem; }
+            .process-section h2, .main-services-section h2, .addons-section h2 { font-size: 2.2rem; }
+        }
+
+
+        /* ── Botón flotante de WhatsApp ── */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    animation: wa-pulse 2.5s ease-in-out infinite;
+}
+
+.whatsapp-float .wa-icon {
+    width: 62px;
+    height: 62px;
+    background: linear-gradient(145deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.55), 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.whatsapp-float .wa-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.4);
+    animation: wa-ring 2.5s ease-in-out infinite;
+}
+
+.whatsapp-float .wa-label {
+    background: #25D366;
+    color: #fff;
+    font-family: 'BoldenVan', sans-serif;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.whatsapp-float:hover .wa-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.whatsapp-float:hover .wa-icon {
+    transform: scale(1.12) rotate(-5deg);
+}
+
+@keyframes wa-ring {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.25); opacity: 0; }
+}
+
+@keyframes wa-pulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float { bottom: 20px; right: 20px; }
+    .whatsapp-float .wa-icon { width: 54px; height: 54px; font-size: 26px; }
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="./Icon_4.png" alt="Galerias Mobile" class="logo-img">
+                </div>
+                <div class="menu-icon" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></div>
+                <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="Faqs.html">FAQs</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="https://wa.me/17866347664?text=Hi!%20I'd%20like%20to%20book%20a%20grooming%20appointment%20for%20my%20pet%20%F0%9F%90%BE" class="nav-book-btn">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <!-- Paw prints decorativos flotantes -->
+            <i class="fas fa-paw hero-paw"></i>
+            <i class="fas fa-paw hero-paw"></i>
+            <i class="fas fa-paw hero-paw"></i>
+            <i class="fas fa-paw hero-paw"></i>
+            <i class="fas fa-paw hero-paw"></i>
+
+            <div class="container page-header-content">
+                <div class="hero-pill">
+                    <i class="fas fa-spa"></i> Miami's Premium Mobile Grooming
+                </div>
+
+                <h1>Our Services</h1>
+
+                <div class="hero-title-underline"></div>
+
+                <p>A completely personalized, stress-free spa experience — delivered directly to your driveway.</p>
+
+                <!-- Mini chips de servicios -->
+                <div class="hero-service-chips">
+                    <span class="hero-chip"><i class="fas fa-cut"></i> Full Grooming</span>
+                    <span class="hero-chip"><i class="fas fa-soap"></i> Wash and Sanitary</span>
+                    <span class="hero-chip"><i class="fas fa-cat"></i> Cat Grooming</span>
+                    <span class="hero-chip"><i class="fas fa-plus-circle"></i> Spa Add-Ons</span>
+                </div>
+            </div>
+
+            <!-- Curva inferior igual que index/about -->
+            <div class="hero-curve-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <h2>How Our Mobile Spa Works</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>We Arrive at Your Door</h3>
+                        <p>No more stressful car rides. Our state-of-the-art, fully self-contained Mercedes Sprinter van pulls right up to your driveway.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>1-on-1 Consultation</h3>
+                        <p>Before any water turns on, our groomer meets with you to discuss your pet's specific needs, coat type, and haircut style.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>The Spa Experience</h3>
+                        <p>Your pet receives undivided attention in a quiet, climate-controlled environment. No cages and completely hypoallergenic products.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>The Grand Reveal</h3>
+                        <p>In about 1 to 2 hours, we bring back a beautifully groomed, fresh-smelling, and happy pet straight into your home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-services-section">
+            <div class="container">
+                <h2>Signature Grooming Packages</h2>
+                <div class="services-grid">
+                    
+                    <div class="service-card">
+                        <div class="service-img-container">
+                            <img src="assets/images/services/full-grooming-2.jpg" alt="Full Grooming Experience" class="service-card-img">
+                        </div>
+                        <div class="service-content">
+                            <h3>Full Grooming Experience</h3>
+                            <p class="service-desc">The ultimate head-to-tail makeover. Perfect for pets that need a complete haircut and styling.</p>
+                            <ul class="service-includes">
+                                <li><i class="fas fa-check-circle"></i> Premium warm hydrobath</li>
+                                <li><i class="fas fa-check-circle"></i> Fluff blow dry (no cage drying)</li>
+                                <li><i class="fas fa-check-circle"></i> Custom full-body haircut</li>
+                                <li><i class="fas fa-check-circle"></i> Nail trimming & filing</li>
+                                <li><i class="fas fa-check-circle"></i> Ear cleaning and plucking</li>
+                                <li><i class="fas fa-check-circle"></i> Sanitary trim (pads & belly)</li>
+                                <li><i class="fas fa-check-circle"></i> Pet-safe cologne & bandana</li>
+                            </ul>
+                            <a href="https://wa.me/17866347664?text=Hi!%20I'd%20like%20to%20book%20a%20grooming%20appointment%20for%20my%20pet%20%F0%9F%90%BE" class="book-service-btn" target="_blank" rel="noopener noreferrer">Request Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img-container">
+                            <img src="assets/images/services/waash.png" alt="Wash & Sanitary Trim" class="service-card-img">
+                        </div>
+                        <div class="service-content">
+                            <h3>Wash & Sanitary Trim</h3>
+                            <p class="service-desc">The perfect maintenance package for in-between full grooms or for short-haired breeds.</p>
+                            <ul class="service-includes">
+                                <li><i class="fas fa-check-circle"></i> Premium warm hydrobath</li>
+                                <li><i class="fas fa-check-circle"></i> Fluff blow dry and deep brushing</li>
+                                <li><i class="fas fa-check-circle"></i> Face, feet, and sanitary trim</li>
+                                <li><i class="fas fa-check-circle"></i> Nail trimming and filing</li>
+                                <li><i class="fas fa-check-circle"></i> Ear cleaning</li>
+                                <li><i class="fas fa-check-circle"></i> Gland expression (if needed)</li>
+                                <li><i class="fas fa-check-circle"></i> Pet-safe cologne and bandana</li>
+                            </ul>
+                            <a href="https://wa.me/17866347664?text=Hi!%20I'd%20like%20to%20book%20a%20grooming%20appointment%20for%20my%20pet%20%F0%9F%90%BE" class="book-service-btn" target="_blank" rel="noopener noreferrer">Request Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img-container">
+                            <img src="assets/images/services/cat-grooming-bath.jpg" alt="Premium Cat Grooming" class="service-card-img" onerror="this.src='https://via.placeholder.com/600x400?text=Cat+Grooming'">
+                        </div>
+                        <div class="service-content">
+                            <h3>Premium Cat Grooming</h3>
+                            <p class="service-desc">A calm, feline-friendly spa day. We handle your kitty with the extra patience and gentle care they deserve.</p>
+                            <ul class="service-includes">
+                                <li><i class="fas fa-check-circle"></i> Feline-safe bath (warm water or waterless)</li>
+                                <li><i class="fas fa-check-circle"></i> Gentle towel or low-noise dry</li>
+                                <li><i class="fas fa-check-circle"></i> Deep brushing and de-shedding</li>
+                                <li><i class="fas fa-check-circle"></i> Custom haircut (e.g., Lion Cut)</li>
+                                <li><i class="fas fa-check-circle"></i> Precision nail trimming</li>
+                                <li><i class="fas fa-check-circle"></i> Ear and eye cleaning</li>
+                                <li><i class="fas fa-check-circle"></i> Sanitary trim (if needed)</li>
+                            </ul>
+                            <a href="https://wa.me/17866347664?text=Hi!%20I'd%20like%20to%20book%20a%20grooming%20appointment%20for%20my%20pet%20%F0%9F%90%BE" class="book-service-btn" target="_blank" rel="noopener noreferrer">Request Appointment</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="addons-section">
+            <div class="container">
+                <h2>Spa Add-Ons & Upgrades</h2>
+                <p class="subtitle">Customize your pet's spa day with these specialized treatments. These can be added to any of our signature packages.</p>
+                
+                <div class="addons-grid">
+                    <div class="addon-card">
+                        <div class="addon-img-container">
+                            <img src="assets/images/services/teeth.jpg" alt="Teeth Brushing" class="addon-img">
+                        </div>
+                        <h4>Teeth Brushing</h4>
+                        <p>Enzymatic toothpaste and plaque removal to ensure fresh breath and support oral health.</p>
+                    </div>
+
+                    <div class="addon-card">
+                        <div class="addon-img-container">
+                            <img src="assets/images/services/flea.jpg" alt="Flea & Tick Treatment" class="addon-img" onerror="this.src='https://via.placeholder.com/150?text=Flea+Treatment'">
+                        </div>
+                        <h4>Flea & Tick Treatment</h4>
+                        <p>Specialized therapeutic bath with premium defense formulas to safely eliminate pests and soothe irritated skin immediately.</p>
+                    </div>
+
+                    <div class="addon-card">
+                        <div class="addon-img-container">
+                            <img src="assets/images/services/ear.png" alt="Ear Cleaning" class="addon-img">
+                        </div>
+                        <h4>Ear Cleaning</h4>
+                        <p>Gentle removal of wax, debris, and moisture to effectively prevent inner ear infections.</p>
+                    </div>
+
+                    <div class="addon-card">
+                        <div class="addon-img-container">
+                            <img src="assets/images/services/Gemini_Generated_Image_1dv7fr1dv7fr1dv7.png" alt="Nail Grinding" class="addon-img">
+                        </div>
+                        <h4>Nail Grinding</h4>
+                        <p>Smooths out sharp edges using a precision dremel after clipping to prevent floor scratches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="background: var(--color-primary); color: white; text-align: center; padding: 70px 20px;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Ready to pamper your pet?</h2>
+            <p style="margin-bottom: 35px; font-size: 1.1rem; opacity: 0.9;">Contact us today to discuss your pet's needs and receive a custom quote.</p>
+            <a href="https://wa.me/17866347664?text=Hi!%20I'd%20like%20to%20book%20a%20grooming%20appointment%20for%20my%20pet%20%F0%9F%90%BE" class="btn btn-primary" style="font-size: 1rem; padding: 15px 40px; border-radius: 30px;">Book Your Appointment</a>
+        </div>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="container footer-top-grid">
+            
+            <div class="footer-brand">
+                <img src="./Icon_4.png" alt="Galerias Mobile Pet Grooming" class="footer-logo">
+                <p>We bring the luxury spa to your doorstep. Stress-free, hypoallergenic, and professional care for your best friend.</p>
+<div class="footer-socials">
+    <a href="https://www.instagram.com/galeriasmobilegrooming/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/people/Galerias-Mobile-grooming/100092451976969/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+    
+</div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Faqs.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+17866347664">(786) 634-7664</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:galerias101@gmail.com">galerias101@gmail.com</a></li>
+                    <li data-key="footer_info_location"><i class="fas fa-map-marker-alt"></i> Serving Miami-Dade & Broward</li>
+                </ul>
+            </div>
+
+            <div class="footer-hours">
+                <h3>Business Hours</h3>
+                <ul>
+                    <li><strong>Mon - Sat:</strong> 8:00 AM - 7:00 PM</li>
+                    <li><strong>Sunday:</strong> 9:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>© 2026 Galerias Mobile Pet Grooming. All rights reserved.</p>
+                <div class="legal-links">
+                    <span data-key="footer_privacy" style="color: #a0aec0; cursor: default;">Privacy Policy</span>
+                    <span data-key="footer_terms" style="color: #a0aec0; cursor: default;">Terms of Service</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/17866347664?text=Hi!%20I'd%20like%20to%20book%20a%20grooming%20appointment%20%F0%9F%90%BE" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <span class="wa-label">Chat with us!</span>
+        <div class="wa-icon"><i class="fab fa-whatsapp"></i></div>
+    </a>
+
+<script>
+    // ── MENÚ HAMBURGUESA MOBILE CORREGIDO ──
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks   = document.getElementById('navLinks');
+    const menuIcon   = menuToggle.querySelector('i');
+
+    if (menuToggle && navLinks && menuIcon) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Cerrar menú al hacer click en cualquier enlace
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.className = 'fas fa-bars';
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Cerrar menú al hacer click fuera del navbar
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuIcon.className = 'fas fa-bars';
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+</script>
+
+
+</body>
+
+
+
+</html>
